@@ -1,0 +1,43 @@
+ludus:
+  - vm_name: "{{range_id}}-ubuntu"
+    hostname: "{{range_id}}-ubuntu"
+    template: ubuntu-comp2
+    vlan: 2
+    ip_last_octet: 10
+    ram_gb: 2
+    cpus: 2
+    linux: true
+
+  - vm_name: "{{range_id}}-debian"
+    hostname: "{{range_id}}-debian"
+    template: debian-comp2
+    vlan: 2
+    ip_last_octet: 11
+    ram_gb: 2
+    cpus: 2
+    linux: true
+
+  - vm_name: "{{range_id}}-win10"
+    hostname: "{{range_id}}-win10"
+    template: win11-comp2
+    vlan: 2
+    ip_last_octet: 12
+    ram_gb: 4
+    cpus: 2
+    linux: false
+
+  - vm_name: "{{range_id}}-winserv"
+    hostname: "{{range_id}}-winserv"
+    template: winserv-comp2
+    vlan: 2
+    ip_last_octet: 13
+    ram_gb: 4
+    cpus: 2
+    linux: false
+
+network:
+  inter_vlan_default: ACCEPT
+  external_default: ACCEPT
+  wireguard_vlan_default: ACCEPT
+  always_blocked_networks: []
+
